@@ -12,10 +12,6 @@
           <h1>Twitter</h1>
       </section>
     </header>
-
-    <section class="img">
-    <div class="">
-   </div>
  </section>
 
   <section class="subtitulo">
@@ -27,22 +23,15 @@
  <!---sección textarea, boton y contenedor mensajes--->
   <section class="center">
     <div class="container">
-      <textarea cols="30" rows="10" class="txt" id="comment" placeholder="¿Que esta pasando?"></textarea>
-      <span id="counter"></span>
+      <textarea class="txt" id="comment" placeholder="¿Que esta pasando?" rows="1"cols="2"  onkeyDown="contar()" onkeyUp="contar()"></textarea>
+     <button type="button" id="btn" onclick="add()">TWEET</button>
+      <p id="counter">140</p>
       <hr>
-      <button type="button" id="btn" onclick="add()">TWEET</button>
-      <!---contenedor comentarios--->
-       </div>
-       </section>
-
-       <section>
-           <div class="containertext">
-           <div id="cont"></div>
-         </div>
-        </section>
-
+      </div>
+    </section>
+      <div id="text">
+     </div>
 
     <script type="text/javascript" src="assets/js/app.js"></script>
-
   </body>
 </html>

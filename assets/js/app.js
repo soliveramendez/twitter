@@ -1,38 +1,54 @@
-
  function add(){ /*almacenando valores*/
+ var comments = document.getElementById("comment").value;/*rescatando el valor del id tengo q almacenar y luego rescatar el valor*/
+ if (comments == null || comments.length==0 || comments.length >140){
+ alert ("Ingrese un comentario válido");
+ return false;
+ }
+ document.getElementById("comment").value =""; /*agrega el valor y despues lo limpia lo deja vacio*/
+ var paragraph = document.createElement("p");/*creando solo la etiqueta p, no el contenido*/
+ var nodoText =document.createTextNode(comments);/*creando el nodo de texto le traspaso lo que el usuario escribe*/
+ paragraph.appendChild(nodoText); /*se llama al padre y traspasa la informacion al p*/
+ var text = document.getElementById("text"); /*llamando contenedor para rescatar informacion*/
+ text.appendChild(paragraph);
+ var num = document.getElementById("counter")
+ num.innerHTML=140;
+ paragraph.oppenChild(d);
+ }
 
-  var cont = document.getElementById("cont"); /*llamando contenedor para rescatar informacion*/
-  var comments = document.getElementById("comment");/*rescatando el valor del id tengo q almacenar y luego rescatar el valor*/
-  //document.getElementById("comment").value =" "; /*agrega el valor y despues lo limpia lo deja vacio*/
-  var newComments = document.createElement("div");/*crear contenedor comentario*/
-  var paragraph = document.createElement("p");/*creando solo la etiqueta p, no el contenido*/
-  paragraph.classList.add("color");/*creando clase del elemento p*/
-  var nodoText =document.createTextNode(comments)/*creando el nodo de texto*/
-  paragraph.appendChild(nodoText); /*se llama al padre y traspasa la informacion al p*/
+  /*contador*/
+ function contar(){
+ var counter = document.getElementById("counter");/*llamando al id counter*/
+ var maxlenght =140;
+ var comments = document.getElementById("comment").value;
+ var commentsText = comments.length;
+ counter.innerHTML = maxlenght-commentsText;
+ var total = maxlenght-commentsText;
 
-  newComments.appendChild(paragraph);/*algo tiene que contener a parrafo*/
-  cont.appendChild(newComments); /*algo tiene que contener a newComments*/
-
-
-
-var commentsText = comments.value.length;
-console.log(commentsText)
-var maxlenght =140;
-var charCount= document.getElementById("counter");
-var resto = maxlenght - commentsText;
-charCount.textContent =resto;
+  if (total <=20 && total > 10){
+  btn.disabled = false;
+  comment.style.color ="yellow";
+  }
+  if (total <= 10){
+  comment.style.color ="red";
+  btn.disabled = false;
 }
+}
+/*alto textarea*/
+ comment.addEventListener('keydown', function autosize(){
+ var el = this;
+ setTimeout(function(){
+ el.style.cssText = 'height:auto; padding:0';
+ // for box-sizing other than "content-box" use:
+ // el.style.cssText = '-moz-box-sizing:content-box';
+ el.style.cssText = 'height:' + el.scrollHeight + 'px';
+ },0);
+})
 
-// function contador(){
-//   if (text == ""){
-//   boton.disabled = true;
-// }else if (long > max){
-//    boton.disabled = true;
-//  }else if ( (long > 120){
-//    valor.style.color = "green";
-//  }else if ( (long > 130){
-//    valor.style.color = "yellow";
-//  }else if(long > 140)
-//   console.log("mostrar el contador en negativo");
-
-// }
+/*fecha y hora*/
+ var fecha = new Date();
+ var date = fech.getDate();
+ var month = fecha.getMonth();
+ var year = fecha.getFullYear();
+ var hours = fecha.getHours();
+ var minutes = fecha.getMinutes();
+ var fullDate = date +'/'+ month +'/'+ year +' '+ hours +':'+ minutes;
